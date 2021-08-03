@@ -19,6 +19,7 @@ public class d2_1954_02 {
 			int d = 1;
 			int i=0, j=-1;
 			dal(i,j,len,d);
+			
 			System.out.println("#" + t);
 			for(int l=0; l<num; l++) {
 				for(int m=0; m<num; m++) {
@@ -32,8 +33,7 @@ public class d2_1954_02 {
 	
 	public static void dal(int i, int j, int len, int d) {
 		for(int l =0; l<len; l++) {
-			j+=d;
-			
+			j+=d;		
 			dal[i][j] = count++;				
 		}
 		len = len-1;

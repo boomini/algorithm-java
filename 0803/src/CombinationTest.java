@@ -24,7 +24,6 @@ public class CombinationTest {
 		for(int i = start; i<N; i++) {
 			
 			numbers[cnt] = input[i];
-			System.out.println((start+1) + " " +  (i+1) + " " + Arrays.toString(numbers));
 			//다음 자리순열 뽑으러 gogo
 			combination(cnt+1,i+1);
 			
