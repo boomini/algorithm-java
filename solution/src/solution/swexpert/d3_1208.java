@@ -31,7 +31,7 @@ public class d3_1208 {
 			"";
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		//in = new BufferedReader(new StringReader(str));
+		in = new BufferedReader(new StringReader(str));
 		
 		StringBuilder sb = new StringBuilder();
 		for(int tc=1; tc<=10; tc++) {

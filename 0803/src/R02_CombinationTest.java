@@ -10,7 +10,7 @@ public class R02_CombinationTest {
 			
 	}
 	public static void main(String[] args) {
-		System.out.println(comb(3,2));
+		System.out.println(comb(6,3));
 		System.out.println(comb(5,3));
 	}
 }

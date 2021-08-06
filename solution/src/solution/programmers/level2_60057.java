@@ -5,20 +5,28 @@ class Solution {
 		StringBuilder sb = new StringBuilder();
 		int answer = 0;
 		int slen = s.length();
-		if(slen==1) return 1;
+		//받아온 문자열의 길이가 1일 경우
+		if(slen==1) return 1; 
+		
 		int n = slen / 2;
 		int min = 1001;
 		
-		for (int i = 1; i <= n; i++) {// 요약하는 글자수 배열
+		// 요약하는 글자수 배열
+		for (int i = 1; i <= n; i++) {
 			int start = 0, count = 1, end = i;
+			//문자열 남는지 확인해주는 변수
 			int num = slen%i;
 			String check = "";
-			while (true) {// 체크할 문자 정하는 반복문
+			
+			//체크할 문자 정하는 반복문
+			while (true) {
 				if (end > slen)
 					break;
 				check = s.substring(start, end);
 				String next = "";
-				while (true) {// 비교반복문
+				
+				//비교할 문자 반복문
+				while (true) {
 					start = start + i;
 					end = end + i;
 					if (end > slen)
