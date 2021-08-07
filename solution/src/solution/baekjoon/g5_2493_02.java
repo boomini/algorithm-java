@@ -16,8 +16,7 @@ public class g5_2493_02 {
 		StringTokenizer st = new StringTokenizer(s, " ");
 		StringBuilder sb = new StringBuilder();	
 		for(int i=1; i<=N; i++) {
-			int num = Integer.parseInt(st.nextToken());
-			
+			int num = Integer.parseInt(st.nextToken());		
 			while(!top.isEmpty()) {
 				if(top.peek()[1]<num) {
 						top.pop();
@@ -26,12 +25,9 @@ public class g5_2493_02 {
 					sb.append(top.peek()[0]).append(" ");
 					break;
 				}				
-			}
-			
-			if(top.isEmpty()) sb.append(0).append(" ");
-			
-			top.add(new int[] {i,num});
-			
+			}		
+			if(top.isEmpty()) sb.append(0).append(" ");	
+			top.add(new int[] {i,num});		
 		}
 		System.out.println(sb.toString());
 	}
