@@ -18,6 +18,7 @@ public class d3_5215 {
 		int T = Integer.parseInt(in.readLine());
 		StringBuilder sb = new StringBuilder();
 		for (int tc = 1; tc <= T; tc++) {
+			max = 0;
 			sb.append("#").append(tc).append(" ");
 			String s = in.readLine();
 			StringTokenizer st = new StringTokenizer(s, " ");
