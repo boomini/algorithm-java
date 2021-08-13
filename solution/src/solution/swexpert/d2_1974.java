@@ -3,6 +3,8 @@ package solution.swexpert;
 import java.io.FileInputStream;
 import java.util.Scanner;
 
+
+
 public class d2_1974 {
 	static int[][] a = new int[9][9];
 
