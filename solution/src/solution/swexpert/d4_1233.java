@@ -14,7 +14,6 @@ public class d4_1233 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-
 		for (int tc = 1; tc <= 1; tc++) {
 			sb.append("#").append(tc).append(" ");
 			int N = Integer.parseInt(in.readLine());
