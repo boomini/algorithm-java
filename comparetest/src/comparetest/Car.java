@@ -32,11 +32,11 @@ public class Car implements Comparable<Car>{
 	public String toString() {
 		return "Car [carNum=" + carNum + ", carName=" + carName + ", maker=" + maker + "]";
 	}
-	//this가 car보다 우선순위가 더 높으면 -1, 같으면 0, 낮으면 1을 리턴
+	//차번호로 compare하여 정렬하기
 	@Override
 	public int compareTo(Car car) {
-		//if(this.carNum > car.carNum) { //내림차순
-		if(this.carNum < car.carNum) {
+		if(this.carNum > car.carNum) { //내림차순
+//		if(this.carNum < car.carNum) {
 			//오름차순
 			return -1;
 		}else if(this.carNum == car.carNum) {
@@ -45,15 +45,15 @@ public class Car implements Comparable<Car>{
 			return 1;
 		}
 	}
-	
+	//차이름으로 compare하여 정렬하기
 //	@Override
 //	public int compareTo(Car car) {
 //		if(this.carName.compareTo(car.carName) > 0) {
-//			return 1;//오름차순
-//			//return -1;//내림차순
+//			//return 1;//오름차순
+//			return -1;//내림차순
 //		}else if(this.carName.compareTo(car.carName) < 0) {
-//			return -1;//오름차순
-//			//return 1; //내림차순
+//			//return -1;//오름차순
+//			return 1; //내림차순
 //		}else {
 //			return 0;
 //		}
