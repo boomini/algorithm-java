@@ -21,52 +21,32 @@ public class s1_2110 {
 			X[i] = Integer.parseInt(in.readLine());
 		}
 		Arrays.sort(X);
-		
-		if(C==2) System.out.println(Math.abs(X[0] - X[N-1]));
-		else {
-			//System.out.println(getValue(0,mid, N-1));
-		}
-		int mid = N/2;
-		int start = 0;
-		int last = N-1;
-		for(int cnt = 2; cnt<C; cnt++) {
-			int midValue =getValue(start,mid, last);
-			cnt++;
-			int leftValue = getValue(start, (start+midValue)/2, midValue);
-			int rightValue = getValue(midValue, (last+midValue)/2, last);
-		}
-		
-	}
-
-	private static int getValue(int start, int mid, int last) {
-	
-		int max = -1;
-		int check = mid;
-		do {
-			int front = distance(X[mid] ,X[start]);
-			int end =distance(X[last] ,X[mid]); 
-			int num= Math.min(front, end);
+		int start = 1;
+		int last = distance(X[0], X[N-1]);		
 			
-			if(num<=max) {
-				break;
+		int mid = 0;
+		int max = 0;
+		while(start<=last) {
+			mid = (start + last) / 2;
+			int cnt = 1;
+			int num = X[0];	
+			for(int i=1; i<N; i++) {
+				if(distance(num,X[i])<mid)continue;
+				cnt++;
+				num = X[i];
 			}
-			else {
-				check = mid;
-				max = num;
+			if(cnt>=C) {
+				
+				start = mid+1;
+				//놓을 수 있는 값이 원하는 값보다 크거나 같으면 더 큰거리 탐색
+				max = Math.max(max, mid);
+				//놓을 수 있는 가능한 거리 중 가장 큰값.
 			}
-			if(front<end) {
-				if(mid+1<last)mid++;
-				else break;
-			}
-			else if(front>end) {
-				if(mid-1>start) mid--;
-				else break;
-			}
-			else if(front==end) break;
-		}while(true);
-		// mid 찾기
+			else last = mid-1;
+			//놓을 수 있는 값이 원하는 값보다 작으면 더 작은거리 탐색.
+		}
 		
-		return max;	
+		System.out.println(max);	
 	}
 	
 	private static int distance(int x, int y) {
