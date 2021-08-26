@@ -45,7 +45,7 @@ public class g5_1753 {
 			int weight = Integer.parseInt(st.nextToken());
 			nodes[from] = new Node( to,nodes[from],weight);
 		}
-		System.out.println(Arrays.toString(nodes));
+		//System.out.println(Arrays.toString(nodes));
 		
 		Arrays.fill(distance, Integer.MAX_VALUE);
 		distance[start] = 0;
@@ -62,12 +62,7 @@ public class g5_1753 {
 				}
 			}
 			visited[current] = true;
-			if(current == index) {
-				System.out.println(current + " " + min);
-				if(min==Integer.MAX_VALUE) System.out.println("INF");
-				System.out.println(min);
-			}
-			if(index==V+1) break;
+			if(index==V) break;
 			index++;
 			//최소값 노드의 최소값거리 살피기
 			for(Node temp = nodes[current]; temp!=null; temp = temp.node ) {
@@ -75,6 +70,14 @@ public class g5_1753 {
 					distance[temp.vertex] = min + temp.weight;
 			}
 			
+			
+		}
+		for(int i=1; i<=V; i++) {
+			if(visited[i]) {
+				System.out.println(distance[i]);
+			}else {
+				System.out.println("INF");
+			}
 			
 		}
 		
