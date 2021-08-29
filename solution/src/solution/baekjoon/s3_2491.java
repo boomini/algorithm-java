@@ -34,6 +34,8 @@ public class s3_2491 {
 			}
 			before = num;
 		}
-		System.out.println(Math.max(bigresult, smallresult));
+		int result = Math.max(bigresult, smallresult);
+		result = result==0?1:result;
+		System.out.println(result);
 	}
 }
