@@ -31,20 +31,25 @@ public class challenges_03 {
 	    	ArrayList<town> towns = new ArrayList<town>();
 	    	long gsum = 0;
 	    	long ssum = 0;
+	    	long time = 0;
 	    	for(int i=0; i<g.length; i++) {
 	    		towns.add(new town(g[i],s[i],w[i],t[i]));
 	    		gsum += g[i];
 	    		ssum += s[i];
+	    		int n = g[i]+s[i] / w[i];
+	    		time = Math.max(time,(n*2-1)* t[i] );
+	    		//걸릴 수 있는 최대의 시간
 	    	}
 	    	Collections.sort(towns);
-	    	int time = 0;
+	    	long start = 0;
+	    	long mid = time/2;
+	    	long end = time;
+	    	
 	    	while(true) {
-	    		//1초마다 무게 계산
-	    		
-	    		
-	    		time++;
-	    		
-	    	break;	
+	    		for(int i=0; i<towns.size(); i++) {
+	    			
+	    		}
+
 	    	}
 	    	
 	       
