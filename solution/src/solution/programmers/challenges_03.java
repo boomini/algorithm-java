@@ -51,9 +51,6 @@ public class challenges_03 {
 	    		}
 
 	    	}
-	    	
-	       
-	        return answer;
 	    }
 	}
 	public static void main(String[] args) {

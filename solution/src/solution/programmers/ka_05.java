@@ -48,7 +48,9 @@ class Solution10{
         return answer;
     }
 	public void dfs(int index, int x, int y) {
-		for(int i=0; i<)
+		for(int i=0; i<nodes[i].node.size(); i++) {
+			
+		}
 	}
 }
 public class ka_05 {
