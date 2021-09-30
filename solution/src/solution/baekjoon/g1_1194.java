@@ -21,7 +21,6 @@ class Node22 implements Comparable<Node22>{
 	}
 	@Override
 	public int compareTo(Node22 o) {
-		// TODO Auto-generated method stub
 		return this.dis-o.dis;
 	}
 }
@@ -77,20 +76,18 @@ public class g1_1194 {
 				int ny = y+dir[d][1];
 
 				if(nx>=0 && ny >= 0 && nx <N && ny <M && !visited[key][nx][ny]) {
-					System.out.println(nx + " " + ny + " " + arr[nx][ny] + (dis+1));
+					//System.out.println(nx + " " + ny + " " + arr[nx][ny] + " " + (dis+1));
 					int next = arr[nx][ny];
 					if(next>=65 && next<=70) {
-						int temp = key & 1<<next;
-						if((temp & (1<<next))==0 ){
+						int temp = key & 1<<(next-65);
+						if(((temp & 1<<(next-65))==0)){
 							continue;
 						}
 						else {
-							arr[nx][ny] = '.';
 							q.add(new Node22(nx,ny,dis+1,key));
 							visited[key][nx][ny] = true;
 						}
 					}else if(next>=97 && next<=102){
-						arr[nx][ny] = '.';
 						q.add(new Node22(nx,ny,dis+1,key|1<<(next-97)));
 						visited[key][nx][ny] = true;
 					}else if(arr[nx][ny] == '#') continue;
