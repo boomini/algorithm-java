@@ -56,12 +56,16 @@ public class g2_17143 {
 			Collections.sort(sh);
 			visited = new boolean[R][N];
 			for(int j=0; j<sh.size(); j++) {
-				int nx = dir[sh.get(i).d][0]+sh.get(i).r;
-				int ny = dir[sh.get(i).d][1]+sh.get(i).c;
-				if(nx>=0 && ny>=0 && nx<R && nx<N) {
-					if(visited[nx][ny]) remove(nx,ny,sh);
-					else visited[nx][ny]=true;
-				}			
+				int nx = dir[sh.get(i).d][0]*sh.get(i).r;
+				int ny = dir[sh.get(i).d][1]*sh.get(i).c;
+				while(nx>=0 && ny>=0 && nx<R && nx<N) {
+					if(nx>=0 && ny>=0 && nx<R && nx<N) {
+						if(visited[nx][ny]) remove(nx,ny,sh);
+						else visited[nx][ny]=true;
+						break;
+					}
+				}
+							
 			}
 			for(int l=0; l<N; l++) {
 				for(int m=0; m<R; m++) {
@@ -69,6 +73,14 @@ public class g2_17143 {
 				}
 			}
 		}
+	}
+
+	private static int changedir(int d) {
+		if(d==1)return 2;
+		else if(d==2)return 1;
+		else if(d==3) return 4;
+		else if(d==4) return 3;
+		return -1;
 	}
 
 	private static void remove(int x, int y, ArrayList<shark> sh) {
