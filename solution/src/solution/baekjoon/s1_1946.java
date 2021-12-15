@@ -44,13 +44,6 @@ public class s1_1946 {
 					cnt++;
 					interview=cur.sn;
 				}
-//				for(int j=0; j<p; j++) {
-//					if(pos.contains(arr.get(j).i)) {
-//						if(cur.sn>=arr.get(j).sn) continue outer;
-//					}
-//				}
-
-
 			}
 			sb.append(cnt).append("\n");
 		}
