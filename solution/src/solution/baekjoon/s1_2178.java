@@ -20,6 +20,7 @@ class Nodee implements Comparable<Nodee>{
 	public int compareTo(Nodee o) {
 		return this.dis - o.dis;
 	}
+
 	
 }
 public class s1_2178 {
@@ -47,12 +48,11 @@ public class s1_2178 {
 				answer = cur.dis;
 				break;
 			}
-			for(int d=0; d<4; d++) {
+			for(int d=0; d<3; d++) {
 				int ni = cur.i+dir[d][0];
 				int nj = cur.j+dir[d][1];
 				if(ni>=0 && nj>=0 && ni<N && nj<M && arr[ni][nj]=='1') {
-					pq.add(new Nodee(ni,nj,cur.dis+1));
-					arr[ni][nj]='0';
+					continue;
 				}
 				
 			}
