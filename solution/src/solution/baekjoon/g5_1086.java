@@ -8,18 +8,14 @@ import java.util.StringTokenizer;
 
 class Nodeee{
 	int i;
-	int left=-1;
-	int right=-1;
+	ArrayList<Integer> arr;
 	public Nodeee(int i) {
 		super();
 		this.i = i;
+		this.arr=new ArrayList<Integer>();
 	}
 	void fillnode(int i) {
-		if(this.left==-1) {
-			this.left = i;
-		}else {
-			this.right = i;
-		}
+		this.arr.add(i);
 	}
 	
 }
@@ -35,27 +31,36 @@ public class g5_1086 {
 		for(int i=0; i<N; i++) {
 			arr.add(new Nodeee(i));
 		}
+		int parent=0;
 		for(int i=0; i<N; i++) {
 			int cur = Integer.parseInt(st.nextToken());
-			if(cur==-1) continue;
+			if(cur==-1) {
+				parent=i;
+				continue;
+			}
 			arr.get(cur).fillnode(i);
 		}
 		
 		remove = Integer.parseInt(in.readLine());
 		
-		bfs(0);
+		bfs(parent);
 		System.out.println(cnt);
 	}
 
 	private static void bfs(int i) {
 		Nodeee cur = arr.get(i);
 		if(cur.i==remove) return;
-		if((cur.left==-1||cur.left==remove)&&(cur.right==-1||cur.right==remove)) {
+		int size = cur.arr.size();
+		int cnt2 = 0;
+		for(int a=0; a<size; a++) {
+			if(cur.arr.get(a)==-1||cur.arr.get(a)==remove)cnt2++;
+		}
+		if(cnt2==size) {
 			cnt++;
 			return;
 		}
-		if(cur.left!=-1)bfs(cur.left);
-		if(cur.right!=-1)bfs(cur.right);
-		
+		for(int a=0; a<size; a++) {
+			bfs(cur.arr.get(a));
+		}
 	}
 }
